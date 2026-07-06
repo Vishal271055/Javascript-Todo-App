@@ -1,0 +1,276 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-List</title>
+    <style>
+        body
+        {
+            background-image: linear-gradient(to left,#7b91f8,#764ba2);
+        }
+
+        #div1
+        {
+            border-radius: 15px;
+            height: 650px;
+            width: 1100px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 5px 2px 30px rgba(0,0,0,0.15);
+            border: none;
+            margin-top: 40px;
+            margin-left: 190px;    
+        }
+
+        #topic
+        {
+            text-align: center;
+            text-shadow: 2px 2px 4px rgb(21, 0, 255) ;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            font-size: 40px;
+        }
+
+        #topic1
+        {
+            text-align: center;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+            font-size: 18px;
+            font-weight: 900;
+            margin-top: 0px;
+            text-shadow: 1px 1px 2px rgb(21, 230, 42);
+        }
+
+        #topic2
+        {
+            width: 950px;
+            margin: 25px auto;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border: none;
+        }
+
+        #inputTask
+        {
+            width: 350px;
+            height: 50px;
+            padding-left: 15px;
+            font-size: 17px;
+            border: 2px solid #dcdcdc;
+            border-radius: 12px;
+            outline: none;
+            transition: .3s;
+        }
+
+        #inputTask:focus
+        {
+            border-color: #4f46e5;
+            box-shadow: 0 0 8px rgba(79,70,229,.3);
+        }
+        
+        #dateTask
+        {
+            width: 170px;
+            height: 50px;
+            padding: 0 10px;
+            font-size: 16px;
+            border: 2px solid #dcdcdc;
+            border-radius: 12px;
+            outline: none;
+            transition: .3s;
+        }
+        
+        #dateTask:focus
+        {
+            border-color: #4f46e5;
+            box-shadow: 0 0 8px rgba(79,70,229,.3);
+        }
+        
+        #priority
+        {
+            width: 170px;
+            height: 50px;
+            padding: 0 10px;
+            font-size: 16px;
+            border: 2px solid #dcdcdc;
+            border-radius: 12px; 
+            outline: none;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        #priority:focus
+        {
+            border-color: #4f46e5;
+            box-shadow: 0 0 8px rgba(79,70,229,.3);
+        }
+        
+        #addtask
+        {
+            width: 130px;
+            height: 50px;
+            background: linear-gradient(135deg,#4f46e5,#2563eb);
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3ms;
+        }
+        
+        #addtask:hover
+        {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(37,99,235,.4);
+        }
+
+       #li li
+       {
+        width: 900px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        margin: 15px auto;
+        border-radius: 15px;
+        background: white;
+        box-shadow: 0 5px 12px rgba(0,0,0,.15);
+        }
+
+        .remove
+        {
+            background-color: orange;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .edit
+        {
+            background-color: red;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .done
+        {
+            background-color: green;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .pin
+        {
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .bkg
+        {
+            background-color: lightgray;
+        }
+
+        #li li:hover
+        {
+            transform: translateY(-4px);
+            box-shadow:0 10px 20px rgba(0,0,0,.25);
+            transition: 0.3s;
+        }
+
+        .task
+        {
+            width:220px;
+            font-size:22px;
+            font-weight:bold;
+        }
+
+        .date
+        {
+            background:#eef3ff;
+            padding:6px 12px;
+            border-radius:10px;
+        }
+
+        .priority
+        {
+            background:#e8f5e9;
+            color:green;
+            padding:6px 14px;
+            border-radius:20px;
+        }
+
+        .your
+        {
+            font-size: 25px;
+            font-weight: 800;
+            font-style: normal;
+            margin-left: 50px;
+        }
+
+        .completed
+        {
+            background-color: #d4edda;
+        } 
+
+       .completed .task, .completed .date, .completed .priority
+       {
+          color: green;
+          text-decoration: line-through;
+        }
+
+        button
+        {
+            border: none;
+            padding:10px 18px;
+            border-radius:30px;
+            font-size:15px;
+            font-weight:bold;
+            cursor:pointer;
+            transition:.3s;
+        }
+
+        button:hover
+        {
+            transform:scale(1.08);
+        }    
+    </style>
+</head>
+<body>
+    <div id="div1">
+
+    <h1 id="topic">📝To Do List</h1>
+    <h4 id="topic1">Organize your task and boost your productivity</h4>
+
+    <div id="topic2">
+
+    <input type="text" id="inputTask" placeholder="✏️Enter the Task">
+    <input type="date" id="dateTask" placeholder="Enter the Date">
+
+    <select name="" id="priority">
+        <option value="🟢">Hight 🟢</option>
+        <option value="🟡">Medium 🟡</option>
+        <option value="🔴">Low 🔴</option>
+    </select>
+
+    <button id="addtask">Add</button>
+
+    </div>
+    <hr class="line">
+    <label class="your">📋Your Tasks📝</label>
+
+    <ul id="li"></ul> 
+
+    </div>
+    <script src="./to-do.js"></script>
+
+</body>
+</html>
