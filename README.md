@@ -22,10 +22,6 @@ A simple To-Do List Web Application built using HTML, CSS, and JavaScript.
 
 https://vishal271055.github.io/Javascript-Todo-App/
 
-## GitHub Repository
-
-https://github.com/Vishal271055/Javascript-Todo-App
-
 ## Author
 
 Vishal
